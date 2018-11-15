@@ -1,0 +1,3 @@
+Copied from http://hubblesite.org/about_us/copyright.php
+
+Material credited to STScI on this site was created, authored, and/or prepared for NASA under Contract NAS5-26555. Unless otherwise specifically stated, no claim to copyright is being asserted by STScI and it may be freely used as in the public domain in accordance with NASA's contract. However, it is requested that in any subsequent use of this work NASA and STScI be given appropriate acknowledgement. STScI further requests voluntary reporting of all use, derivative creation, and other alteration of this work. Such reporting should be sent to copyright@stsci.edu.
