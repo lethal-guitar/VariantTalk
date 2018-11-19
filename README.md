@@ -23,9 +23,9 @@ for the following exceptions, these files are made by me and covered by a [Creat
 
 The following files are Copyright Ascender (see `Apache-License.txt`):
 
-* DroidSans.ttf
-* DroidSans-Bold.ttf
+* `DroidSans.ttf`
+* `DroidSans-Bold.ttf`
 
 The following file is Copyright ESA, NASA, and L. Calcada (ESO for STScI) (see `NASA-License.txt`):
 
-* space-bg.jpg [source](http://hubblesite.org/image/2432/news_release/2008-39)
+* `space-bg.jpg` [source](http://hubblesite.org/image/2432/news_release/2008-39)
