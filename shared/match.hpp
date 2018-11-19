@@ -44,11 +44,11 @@ overloaded(Ts...) -> overloaded<Ts...>;
 
 
 template <typename Variant, typename... Matchers>
-auto match(Variant& variant, Matchers&&... matchers)
+auto match(Variant&& variant, Matchers&&... matchers)
 {
   return std::visit(
     detail::overloaded{std::forward<Matchers>(matchers)...},
-    variant);
+    std::forward<Variant>(variant));
 }
 
 } // namespace variant_talk
