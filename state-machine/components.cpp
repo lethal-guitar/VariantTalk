@@ -103,6 +103,7 @@ void MovingObject::update(const double timeDelta)
       mPosition = *mTargetPosition;
       mVelocity = {};
       mTargetPosition = std::nullopt;
+      return;
     }
   }
 
