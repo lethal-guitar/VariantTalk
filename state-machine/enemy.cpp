@@ -142,9 +142,8 @@ bool Enemy::playerInOuterZone() const
 
 void Enemy::updateLogic(const double timeDelta, const bool reachedCurrentTarget)
 {
-  using MaybeNextState = std::optional<State>;
-  auto maybeNextState = match(mState,
-    [=](Circling& state) -> MaybeNextState
+  mState = match(mState,
+    [=](Circling& state) -> State
     {
       if (reachedCurrentTarget)
       {
@@ -166,20 +165,20 @@ void Enemy::updateLogic(const double timeDelta, const bool reachedCurrentTarget)
         return State{FlyToCenter{}};
       }
 
-      return std::nullopt;
+      return state; // no change
     },
 
-    [=](const FlyToCenter&) -> MaybeNextState
+    [=](const FlyToCenter& state) -> State
     {
       if (reachedCurrentTarget)
       {
         return State{ShootingFromCenter{}};
       }
 
-      return std::nullopt;
+      return state;
     },
 
-    [=](ShootingFromCenter& state) -> MaybeNextState
+    [=](ShootingFromCenter& state) -> State
     {
       state.mTimeSpentInCenter += timeDelta;
       const auto spentEnoughTimeInCenter =
@@ -199,10 +198,10 @@ void Enemy::updateLogic(const double timeDelta, const bool reachedCurrentTarget)
 
       shootAtPlayer(state, timeDelta);
 
-      return std::nullopt;
+      return state;
     },
 
-    [=](const FlyOut& state) -> MaybeNextState
+    [=](const FlyOut& state) -> State
     {
       if (reachedCurrentTarget)
       {
@@ -210,14 +209,9 @@ void Enemy::updateLogic(const double timeDelta, const bool reachedCurrentTarget)
         return State{Circling{state.mTargetCornerIndex}};
       }
 
-      return std::nullopt;
+      return state;
     }
   );
-
-  if (maybeNextState)
-  {
-    mState = *maybeNextState;
-  }
 }
 
 
