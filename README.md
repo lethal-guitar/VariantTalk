@@ -16,6 +16,10 @@ You can also find the slides for my presentation in the `slides` directory.
 
 All the code in this repository is shared under the MIT license (see `LICENSE`).
 
+## Blog post
+
+I wrote a [guest post for Bartek's coding blog](https://www.bfilipek.com/2019/06/fsm-variant-game.html), which focuses specifically on the state machine/space game part of this talk.
+
 ## Licenses for graphics/fonts
 
 There are some non-code assets in the `state-machine/resources` directory. Except
