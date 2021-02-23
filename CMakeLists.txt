@@ -28,7 +28,7 @@ elseif(CMAKE_CXX_COMPILER_ID MATCHES "Clang")
         -Wno-c++98-compat-pedantic
         -Wno-padded
         -Wno-switch-enum
-
+        -Wno-poison-system-directories
         -fcolor-diagnostics
     )
 elseif(CMAKE_COMPILER_IS_GNUCXX)
